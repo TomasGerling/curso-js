@@ -1,6 +1,6 @@
 function calcular_precio (cantidad_producto, precio_producto){
     if ( cantidad_producto >= 1){
-        console.log ("usted debe pagar: ",  (precio_producto * cantidad_producto))
+        console.log (`usted debe pagar: ${precio_producto * cantidad_producto} ¡el envio es gratis! `)
     }
     else if( cantidad_producto <= 0){
         console.log ("usted selecciono una cantida erronea")
@@ -90,19 +90,26 @@ console.log(lista_alimentos)
 
 
 console.log("Bienvenide a Peluditos Petshop");
-let nombre_cliente = prompt("Ingrese su nombre completo");
-
-let direccion_cliente = prompt("Ingrese su direccion para el envio o si retira en el local");
-
-let producto_cliente = prompt("Ingrese que alimento desea comprar");
-
-let precio_producto = prompt("Ingrese el valor por KG del producto");
-
-let cantidad_producto = prompt("Ingrese cuanto quiere comprar (numero)");
 
 
+function ingresar_datos(){
+    let nombre_cliente = prompt("Ingrese su nombre completo");
 
-console.log("Bienvenide " + nombre_cliente);
-console.log("Su direccion es: " + direccion_cliente);
-console.log("Usted selecciono que quiere comprar: " + producto_cliente);
-calcular_precio(cantidad_producto, precio_producto)
+    let direccion_cliente = prompt("Ingrese su direccion para el envio o si retira en el local");
+    
+    let producto_cliente = prompt("Ingrese que alimento desea comprar");
+    
+    let precio_producto = prompt("Ingrese el valor por KG del producto");
+    
+    let cantidad_producto = prompt("Ingrese cuanto quiere comprar (numero)");
+    return [nombre_cliente, direccion_cliente, producto_cliente, precio_producto, cantidad_producto]
+}
+
+let datos = ingresar_datos();
+for (let i = 0; i < datos.length; i++){
+    console.log(datos[i]);
+}
+// console.log("Bienvenide " + nombre_cliente);
+// console.log("Su direccion es: " + direccion_cliente);
+// console.log("Usted selecciono que quiere comprar: " + producto_cliente);
+calcular_precio(datos[4], datos[3])
