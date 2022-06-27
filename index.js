@@ -7,6 +7,14 @@ function calcular_precio (cantidad_producto, precio_producto){
     }
 
 };
+function ingresar_datos(){
+    let nombre_cliente = prompt("Ingrese su nombre completo");
+    let direccion_cliente = prompt("Ingrese su direccion para el envio o si retira en el local");
+    let producto_cliente = prompt("Ingrese que alimento desea comprar");
+    let precio_producto = prompt("Ingrese el valor por KG del producto");
+    let cantidad_producto = prompt("Ingrese cuanto quiere comprar (numero)");
+    return [nombre_cliente, direccion_cliente, producto_cliente, precio_producto, cantidad_producto]
+}
 class Alimentos{
     constructor(product_id, nombre_alimento, cantidad_producto, peso_por_bolsa, tipo_mascota, precio_bolsa, precio_kg, imagen_bolsa){
 
@@ -78,28 +86,15 @@ for( let i = 0; i < 1 ; i++){
     lista_alimentos.push(alimento_nuevo);
 }
 
-console.log(lista_alimentos)
-
-
 console.log("Bienvenide a Peluditos Petshop");
 
-
-function ingresar_datos(){
-    let nombre_cliente = prompt("Ingrese su nombre completo");
-    let direccion_cliente = prompt("Ingrese su direccion para el envio o si retira en el local");
-    let producto_cliente = prompt("Ingrese que alimento desea comprar");
-    let precio_producto = prompt("Ingrese el valor por KG del producto");
-    let cantidad_producto = prompt("Ingrese cuanto quiere comprar (numero)");
-    return [nombre_cliente, direccion_cliente, producto_cliente, precio_producto, cantidad_producto]
-}
+console.log(lista_alimentos)
 
 let datos = ingresar_datos();
 for (let i = 0; i < datos.length; i++){
     console.log(datos[i]);
 }
-// console.log("Bienvenide " + nombre_cliente);
-// console.log("Su direccion es: " + direccion_cliente);
-// console.log("Usted selecciono que quiere comprar: " + producto_cliente);
+
 calcular_precio(datos[4], datos[3])
 
 
