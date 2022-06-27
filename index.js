@@ -102,3 +102,4 @@ for (let i = 0; i < datos.length; i++){
 // console.log("Usted selecciono que quiere comprar: " + producto_cliente);
 calcular_precio(datos[4], datos[3])
 
+
