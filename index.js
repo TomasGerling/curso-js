@@ -1,9 +1,9 @@
 function calcular_precio (cantidad_producto, precio_producto){
     if ( cantidad_producto >= 1){
-        console.log (`usted debe pagar: $${precio_producto * cantidad_producto} ¡el envio es gratis! `)
+        alert (`usted debe pagar: $${precio_producto * cantidad_producto} ¡el envio es gratis! `)
     }
     else if( cantidad_producto <= 0){
-        console.log ("usted selecciono una cantida erronea")
+        alert ("usted selecciono una cantida erronea!")
     }
 
 };
@@ -72,30 +72,30 @@ let lista_alimentos = [
     },
 ]
 // Para agregar un nuevo producto al array
-// for( let i = 0; i < 1 ; i++){
-//     let product_id = parseInt(prompt("Ingrese el id del producto"));
-//     let nombre_alimento = prompt("Ingrese el nombre del producto");
-//     let cantidad_producto = parseInt(prompt("Ingrese cuantas bolsas tiene disponible *En numeros*"));
-//     let peso_por_bolsa = parseFloat(prompt("Ingrese cuanto pesa cada bolsa *Solo el numero*"));
-//     let tipo_mascota = prompt("Ingrese el tipo de mascota *Perro, Gato u Otro*");
-//     let precio_bolsa = parseInt(prompt("Ingrese el precio de venta por Bolsa *Solo el numero*"));
-//     let precio_kg = parseInt(prompt("Ingrese el precio de venta por KG*Solo el numero*"));
-//     let imagen_bolsa = prompt("Ingrese el url de la imagen de la bolsa");
-//     let alimento_nuevo = new Alimentos(product_id, nombre_alimento , cantidad_producto , peso_por_bolsa, tipo_mascota, precio_bolsa, precio_kg, imagen_bolsa);
+for( let i = 0; i < 1 ; i++){
+    let product_id = parseInt(prompt("Ingrese el id del producto"));
+    let nombre_alimento = prompt("Ingrese el nombre del producto");
+    let cantidad_producto = parseInt(prompt("Ingrese cuantas bolsas tiene disponible *En numeros*"));
+    let peso_por_bolsa = parseFloat(prompt("Ingrese cuanto pesa cada bolsa *Solo el numero*"));
+    let tipo_mascota = prompt("Ingrese el tipo de mascota *Perro, Gato u Otro*");
+    let precio_bolsa = parseInt(prompt("Ingrese el precio de venta por Bolsa *Solo el numero*"));
+    let precio_kg = parseInt(prompt("Ingrese el precio de venta por KG*Solo el numero*"));
+    let imagen_bolsa = prompt("Ingrese el url de la imagen de la bolsa");
+    let alimento_nuevo = new Alimentos(product_id, nombre_alimento , cantidad_producto , peso_por_bolsa, tipo_mascota, precio_bolsa, precio_kg, imagen_bolsa);
 
-//     lista_alimentos.push(alimento_nuevo);
-// }
+    lista_alimentos.push(alimento_nuevo);
+}
 
 console.log("Bienvenide a Peluditos Petshop");
 
-// console.log(lista_alimentos)
+console.log(lista_alimentos)
 
-// let datos = ingresar_datos();
-// for (let i = 0; i < datos.length; i++){
-//     console.log(datos[i]);
-// }
+let datos = ingresar_datos();
+for (let i = 0; i < datos.length; i++){
+    console.log(datos[i]);
+}
 
-// calcular_precio(datos[4], datos[3])
+calcular_precio(datos[4], datos[3])
 
 // Metodos de busqueda y transformacion
 let barato = lista_alimentos.filter(nombre_alimento => nombre_alimento.precio_bolsa <= 5000)
@@ -113,3 +113,21 @@ console.log(examinar_producto);
 
 let filtrar_por_tipo = lista_alimentos.filter ((el) => el.tipo_mascota.includes ("Gato"))
 console.log(filtrar_por_tipo);
+
+let darkMode=document.getElementById("darkMode")
+let lightMode=document.getElementById("lightMode")
+
+darkMode.addEventListener("click", function (){
+    let body = document.getElementById("body")
+    body.style.backgroundColor = "#141414"
+    body.style.color ="cornsilk"
+
+
+})
+
+lightMode.addEventListener("click", function (){
+    let body = document.getElementById("body")
+    body.style.backgroundColor = "#add8e6"
+    body.style.color ="black"
+
+})
