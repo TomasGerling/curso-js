@@ -5,48 +5,16 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 /* Esto es para Alimento.html */
-.container-alimento{
+.pages-alimento{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 1fr 0.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas: 
-    "Nav-alimento" 
-    "pages-alimento"
-    "footer";
-}
-.Nav-alimento{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas: 
-    "Portada-alimento" 
-    "Menu-alimento";
-    grid-area: Nav-alimento;
-}
-.Portada-alimento{
-    width: 100%;
-    grid-area: Portada-alimento;
-}
-.Menu-alimento{
-    grid-area: Menu-alimento;
-    margin: 0;
-    display: grid;
-    width: 100%;
-}
-.pages-alimento{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr;
-    gap: 5px 10px;
-    grid-auto-flow: row;
-    grid-template-areas: 
-    "Titulo Titulo" 
-    "alimento-1 alimento-2" 
-    "alimento-3 alimento-4";
-    grid-area: pages-alimento;
+    "Titulo ingresarCuenta"
+    "lista-alimento lista-alimento"
+    "Carrito Carrito";
 }
 .titulo-principal { 
     text-align: center;
@@ -54,7 +22,24 @@ body{
     font-size: 50px;
     border: dotted;
     border-radius: 20px;
+    grid-area: Titulo;
 }
+.ingresarCuenta {
+    grid-area: ingresarCuenta;
+}
+
+.lista-alimento{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr;
+    gap: 5px 10px;
+    grid-auto-flow: row;
+    grid-template-areas: 
+    "alimento-1 alimento-2" 
+    "alimento-3 alimento-4";
+    grid-area: lista-alimento;
+}
+
 .alimento-1{
     grid-area: alimento-1;
     margin-left: 2px;
@@ -77,47 +62,3 @@ body{
     flex-direction: column;
     background: #b34242;
     box-shadow: inset 20px 20px 20px #983838, inset -20px -20px 20px #ce4c4c; };
-
-    @media screen and (min-width: 1440px) {
-        .container-alimento {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 0.2fr 1fr;
-            gap: 0px 0px;
-            grid-auto-flow: row;
-            grid-template-areas: "Nav-alimento Nav-alimento" 
-            "pages-alimento pages-alimento"; }
-        .Nav-alimento {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 0.9fr .1fr;
-            gap: 0px 0px;
-            grid-auto-flow: row;
-            grid-template-areas: "Portada-alimento" 
-            "Menu-alimento";
-            grid-area: Nav-alimento; }
-        .Portada-alimento {
-            width: 100%; }
-        .Menu-alimento {
-            grid-area: Menu-alimento;
-            margin: 0;
-            display: grid;
-            flex-direction: row; }
-        .pages-alimento {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 0.2fr 1fr;
-            gap: 0px 0px;
-            grid-auto-flow: column;
-            grid-template-areas: "Titulo Titulo Titulo Titulo " 
-            "alimento-1 alimento-2 alimento-3 alimento-4";
-            grid-area: pages-alimento; }
-        .alimento-1 {
-            grid-area: alimento-1; }
-        .alimento-2 {
-            grid-area: alimento-2; }
-        .alimento-3 {
-            grid-area: alimento-3; }
-        .alimento-4 {
-            grid-area: alimento-4; }
-    }
