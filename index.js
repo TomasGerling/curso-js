@@ -1,20 +1,3 @@
-function calcular_precio (cantidad_producto, precio_producto){
-    if ( cantidad_producto >= 1){
-        alert (`usted debe pagar: $${precio_producto * cantidad_producto} ¡el envio es gratis! `)
-    }
-    else if( cantidad_producto <= 0){
-        alert ("usted selecciono una cantida erronea!")
-    }
-
-};
-// function ingresar_datos(){
-//     let nombre_cliente = prompt("Ingrese su nombre completo");
-//     let direccion_cliente = prompt("Ingrese su direccion para el envio o si retira en el local");
-//     let producto_cliente = prompt("Ingrese que alimento desea comprar");
-//     let precio_producto = prompt("Ingrese el valor por KG del producto");
-//     let cantidad_producto = prompt("Ingrese cuanto quiere comprar (numero)");
-//     return [nombre_cliente, direccion_cliente, producto_cliente, precio_producto, cantidad_producto]
-// }
 // class Alimentos{
 //     constructor(product_id, nombre_alimento, cantidad_producto, peso_por_bolsa, tipo_mascota, precio_bolsa, precio_kg, imagen_bolsa){
 
@@ -30,47 +13,47 @@ function calcular_precio (cantidad_producto, precio_producto){
 // }
 
 let lista_alimentos = [
-    {
-        product_id: 1,
-        nombre_alimento:"Energy Food Adulto",
-        cantidad_producto:15,
-        peso_por_bolsa:20,
-        tipo_mascota:"Perro",
-        precio_bolsa:4700,
-        precio_kg:290,
-        imagen_bolsa:"/img/Energy_food_adulto_perro.jpg"
-    },
-    {
-        product_id: 2,
-        nombre_alimento:"Excellent Gato Adulto",
-        cantidad_producto:1,
-        peso_por_bolsa:15,
-        tipo_mascota:"Gato",
-        precio_bolsa:5500,
-        precio_kg:500,
-        imagen_bolsa:"/img/Excellent_adulto_perro.jpg"
-    },
-    {
-        product_id: 3,
-        nombre_alimento:"Sieger Criadores",
-        cantidad_producto:2,
-        peso_por_bolsa:20,
-        tipo_mascota:"Perro",
-        precio_bolsa:5500,
-        precio_kg:300,
-        imagen_bolsa:"/img/Sieger_adulto_perro.jpg"
-    },
-    {
-        product_id: 4,
-        nombre_alimento:"Sabrositos Gato Adulto Mix",
-        cantidad_producto:3,
-        peso_por_bolsa:15,
-        tipo_mascota:"Gato",
-        precio_bolsa:4200,
-        precio_kg:300,
-        imagen_bolsa:"/img/Sabrositos_adulto_gato.jpg"
-    },
-]
+  {
+    product_id: 1,
+    nombre_alimento: "Energy Food Adulto",
+    cantidad_producto: 15,
+    peso_por_bolsa: 20,
+    tipo_mascota: "Perro",
+    precio_bolsa: 4700,
+    precio_kg: 290,
+    imagen_bolsa: "/img/Energy_food_adulto_perro.jpg",
+  },
+  {
+    product_id: 2,
+    nombre_alimento: "Excellent Gato Adulto",
+    cantidad_producto: 1,
+    peso_por_bolsa: 15,
+    tipo_mascota: "Gato",
+    precio_bolsa: 5500,
+    precio_kg: 500,
+    imagen_bolsa: "/img/Excellent_adulto_perro.jpg",
+  },
+  {
+    product_id: 3,
+    nombre_alimento: "Sieger Criadores",
+    cantidad_producto: 2,
+    peso_por_bolsa: 20,
+    tipo_mascota: "Perro",
+    precio_bolsa: 5500,
+    precio_kg: 300,
+    imagen_bolsa: "/img/Sieger_adulto_perro.jpg",
+  },
+  {
+    product_id: 4,
+    nombre_alimento: "Sabrositos Gato Adulto Mix",
+    cantidad_producto: 3,
+    peso_por_bolsa: 15,
+    tipo_mascota: "Gato",
+    precio_bolsa: 4200,
+    precio_kg: 300,
+    imagen_bolsa: "/img/Sabrositos_adulto_gato.jpg",
+  },
+];
 // Para agregar un nuevo producto al array
 // for( let i = 0; i < 1 ; i++){
 //     let product_id = parseInt(prompt("Ingrese el id del producto"));
@@ -86,21 +69,11 @@ let lista_alimentos = [
 //     lista_alimentos.push(alimento_nuevo);
 // }
 
-console.log("Bienvenide a Peluditos Petshop");
-
-console.log(lista_alimentos)
-
-// let datos = ingresar_datos();
-// for (let i = 0; i < datos.length; i++){
-//     console.log(datos[i]);
-// }
-
-// calcular_precio(datos[4], datos[3])
-
 // Metodos de busqueda y transformacion
-let barato = lista_alimentos.filter(nombre_alimento => nombre_alimento.precio_bolsa <= 5000)
-console.log(barato);
-
+// let barato = lista_alimentos.filter(
+//   (nombre_alimento) => nombre_alimento.precio_bolsa <= 5000
+// );
+// console.log(barato);
 
 // let lista_productos = lista_alimentos.map(product_id => product_id.nombre_alimento)
 // console.log(lista_productos);
@@ -114,92 +87,136 @@ console.log(barato);
 // let filtrar_por_tipo = lista_alimentos.filter ((el) => el.tipo_mascota.includes ("Gato"))
 // console.log(filtrar_por_tipo);
 
-let darkMode=document.getElementById("darkMode")
-let lightMode=document.getElementById("lightMode")
+let darkMode = document.getElementById("darkMode");
+let lightMode = document.getElementById("lightMode");
 
-darkMode.addEventListener("click", function (){
-    let body = document.getElementById("body")
-    body.style.backgroundColor = "#141414"
-    body.style.color ="cornsilk"
-})
+darkMode.addEventListener("click", function () {
+  let body = document.getElementById("body");
+  body.style.backgroundColor = "#141414";
+  body.style.color = "cornsilk";
+});
 
-lightMode.addEventListener("click", function (){
-    let body = document.getElementById("body")
-    body.style.backgroundColor = "#add8e6"
-    body.style.color ="black"
-})
+lightMode.addEventListener("click", function () {
+  let body = document.getElementById("body");
+  body.style.backgroundColor = "#add8e6";
+  body.style.color = "black";
+});
 
-let botones_compra_KG = document.querySelectorAll(".Boton-compra-KG");
-let botones_compra_Bolsa = document.querySelectorAll(".Boton-compra-Bolsa");
-let carrito = [];
-let carrito_storage = [];
+const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
+addToShoppingCartButtons.forEach((addToCartButton) => {
+  addToCartButton.addEventListener('click', addToCartClicked);
+});
 
-for( let boton of botones_compra_KG){
+const comprarButton = document.querySelector('.comprarButton');
+comprarButton.addEventListener('click', comprarButtonClicked);
 
-    boton.addEventListener("click", agregar_carrito);
-}
-for( let boton of botones_compra_Bolsa){
+const shoppingCartItemsContainer = document.querySelector(
+  '.shoppingCartItemsContainer'
+);
 
-    boton.addEventListener("click", agregar_carrito);
-}
+function addToCartClicked(event) {
+  const button = event.target;
+  const item = button.closest('.item');
 
-function agregar_carrito(e){
+  const itemTitle = item.querySelector('.item-title').textContent;
+  const itemPrice = item.querySelector('.item-price').textContent;
+  const itemImage = item.querySelector('.item-image').src;
 
-    let hijo = e.target;
-    let padre = hijo.parentNode.parentNode;
-    let abuelo= padre.parentNode;
-    let nombre_producto = abuelo.querySelector(".nombre-carrito").textContent;
-    let img = abuelo.querySelector("img").src;
-    //console.log(img);
-    let precio = abuelo.querySelector(".precio-KG").textContent;
-    let precio_bolsa = abuelo.querySelector(".precio-Bolsa").textContent;
-    //console.log(precio);
-    let producto = {
-        nombre: nombre_producto,
-        img: img,
-        precio: precio,
-        cantidad:1
-    };
-    carrito.push(producto);
-
-    let producto_JSON = JSON.stringify(producto);
-    carrito_storage.push(producto_JSON);
-
-    localStorage.setItem("producto" , carrito_storage);
-
-    mostrar_carrito( producto );
+  addItemToShoppingCart(itemTitle, itemPrice, itemImage);
 }
 
-function mostrar_carrito( producto ){
-
-    let fila = document.createElement("tr");
-
-    fila.innerHTML = `<td><img src="${producto.img}"></td>
-                      <td>${producto.nombre}</td>
-                      <td>${producto.cantidad}</td>
-                      <td>${producto.precio}</td>
-                      <td><button class="btn-danger borrar_elemento">Borrar</buttton></td>    
-    
-    ` ;
-
-    let body_tabla = document.getElementById("tbody");
-    body_tabla.append( fila );
-
-
-
-    let botones_borrar = document.querySelectorAll(".borrar_elemento");
-
-    for(let boton of botones_borrar){
-
-        boton.addEventListener("click" , borrar_producto);
+function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
+  const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
+    'shoppingCartItemTitle'
+  );
+  for (let i = 0; i < elementsTitle.length; i++) {
+    if (elementsTitle[i].innerText === itemTitle) {
+      let elementQuantity = elementsTitle[
+        i
+      ].parentElement.parentElement.parentElement.querySelector(
+        '.shoppingCartItemQuantity'
+      );
+      elementQuantity.value++;
+      $('.toast').toast('show');
+      updateShoppingCartTotal();
+      return;
     }
+  }
+
+  const shoppingCartRow = document.createElement('div');
+  const shoppingCartContent = `
+  <div class="row shoppingCartItem">
+        <div class="col-6">
+            <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <img src=${itemImage} class="shopping-cart-image">
+                <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div
+                class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                    value="1">
+                <button class="btn btn-danger buttonDelete" type="button">X</button>
+            </div>
+        </div>
+    </div>`;
+  shoppingCartRow.innerHTML = shoppingCartContent;
+  shoppingCartItemsContainer.append(shoppingCartRow);
+
+  shoppingCartRow
+    .querySelector('.buttonDelete')
+    .addEventListener('click', removeShoppingCartItem);
+
+  shoppingCartRow
+    .querySelector('.shoppingCartItemQuantity')
+    .addEventListener('change', quantityChanged);
+
+  updateShoppingCartTotal();
 }
 
+function updateShoppingCartTotal() {
+  let total = 0;
+  const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
 
-function borrar_producto(e){
+  const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
 
-    let hijo = e.target;
-    let abuelo = hijo.parentNode.parentNode;
+  shoppingCartItems.forEach((shoppingCartItem) => {
+    const shoppingCartItemPriceElement = shoppingCartItem.querySelector(
+      ".shoppingCartItemPrice"
+    );
+    const shoppingCartItemPrice = Number(
+      shoppingCartItemPriceElement.textContent.replace('$', '')
+    );
+    const shoppingCartItemQuantityElement = shoppingCartItem.querySelector(
+      '.shoppingCartItemQuantity'
+    );
+    const shoppingCartItemQuantity = Number(
+      shoppingCartItemQuantityElement.value
+    );
+    total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+  });
+  shoppingCartTotal.innerHTML = `${total.toFixed(2)}$`;
+}
 
-    abuelo.remove();
+function removeShoppingCartItem(event) {
+  const buttonClicked = event.target;
+  buttonClicked.closest('.shoppingCartItem').remove();
+  updateShoppingCartTotal();
+}
+
+function quantityChanged(event) {
+  const input = event.target;
+  input.value <= 0 ? (input.value = 1) : null;
+  updateShoppingCartTotal();
+}
+
+function comprarButtonClicked() {
+  shoppingCartItemsContainer.innerHTML = '';
+  updateShoppingCartTotal();
 }
