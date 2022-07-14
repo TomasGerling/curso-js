@@ -146,12 +146,13 @@ for( let boton of botones_compra_Bolsa){
 function agregar_carrito(e){
 
     let hijo = e.target;
-    let padre = hijo.parentNode;
+    let padre = hijo.parentNode.parentNode;
     let abuelo= padre.parentNode;
-    let nombre_producto = abuelo.querySelector("h3").textContent;
+    let nombre_producto = abuelo.querySelector(".nombre-carrito").textContent;
     let img = abuelo.querySelector("img").src;
     //console.log(img);
-    let precio = abuelo.querySelector("span").textContent;
+    let precio = abuelo.querySelector(".precio-KG").textContent;
+    let precio_bolsa = abuelo.querySelector(".precio-Bolsa").textContent;
     //console.log(precio);
     let producto = {
         nombre: nombre_producto,
