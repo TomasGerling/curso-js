@@ -124,7 +124,7 @@ function addToCartClicked(event) {
 
   addItemToShoppingCart(itemTitle, itemPrice, itemImage);
 }
-
+// Aca esta mi problema
 function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
   const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
     'shoppingCartItemTitle'
@@ -133,7 +133,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     if (elementsTitle[i].innerText === itemTitle) {
       let elementQuantity = elementsTitle[
         i
-      ].parentElement.parentElement.parentElement.querySelector(
+      ].parentElement.querySelector(
         '.shoppingCartItemQuantity'
       );
       elementQuantity.value++;
@@ -142,7 +142,6 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
       return;
     }
   }
-
   const shoppingCartRow = document.createElement('div');
   const shoppingCartContent = `
   <div class="row shoppingCartItem">
