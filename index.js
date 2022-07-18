@@ -226,7 +226,8 @@ registro.addEventListener("click", function () {
     document.querySelector("#name").value,
     document.querySelector("#lastname").value,
     document.querySelector("#email").value,
-    document.querySelector("#password").value,);
+    document.querySelector("#password").value,
+    );
     let userToObject = {
       name: document.querySelector("#name").value,
       lastname: document.querySelector("#lastname").value,
@@ -240,3 +241,15 @@ saveOnLocalStorage(userToObject)
 let saveOnLocalStorage = function(userToObject){
   localStorage.setItem("userInfo", JSON.stringify(userToObject));
 }
+
+let readLocalStorage = function(){
+  let userInfo = localStorage.getItem("userInfo")
+  console.log(userInfo);
+  let JSONToObject = JSON.parse(userInfo)
+  console.log(JSONToObject);
+  document.querySelector("#name").value = userInfo.name;
+  document.querySelector("#lastname").value = userInfo.lastname;
+  document.querySelector("#email").value = userInfo.email;
+  document.querySelector("#password").value = userInfo.password;
+}
+//La idea es que si pones readLocalStorage() deberia poner los datos que hay guardados en localStorage pero no me estaria funcionando (devuelve undefined, supongo que es un error a la hora de convertir los datos), estoy averiguando porque
