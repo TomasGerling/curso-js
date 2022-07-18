@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="main.css">
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peluditos Petshop</title>
 </head>
+
 <body id="body">
     <div>
         <div class="pages-alimento">
@@ -17,153 +19,139 @@
                 <h2 class="titulo-principal">Peluditos Petshop</h3>
             </div>
             <div class="ingresarCuenta">
-                <div class="form">
-                    <ul class="datos">
-                        <li>
-                            <form action="">
-                                <label for="usuario"> 
-                                    Usuario:
-                                </label>
-                            <input type="text" id="usuario" name="usuario" placeholder="Tu usuario">
-                        </li>
-                        <li>
-                            <label for="contraseña"> 
-                                Contraseña:
-                            </label>
-                            <input type="password" id="password" name="Contraseña" placeholder="Tu contraseña">
-                        </li>
-                        <li>
-                            <button class="Login">
-                                Ingresar
-                            </button>
-                        </li>
-                    </div>
-                </div>
+                <h4>Registro o Ingreso de cuenta</h4>
+                <input type="text" name="name" id="name" placeholder="Nombre">
+                <input type="text" name="lastname" id="lastname" placeholder="Apellido">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="password" name="password" id="password" placeholder="Contraseña">
+                <input type="button" value="Registro" id="registerButton">
             </div>
-        </div>
-            <div class="lista-alimento">
-                <div class="alimento-1">
-                    <div class="product">
-                        <div class="item card">
-                            <h3 class="nombre-producto">
-                                Bolsa <span class="item-title">sabrositos gato </span> 15KG
-                            </h3>
-                            <img class="item-image" src="/assets/sabrositos-gato-adulto.png" alt="Bolsa sabrositos gato adulto">
-                            <div class="item-details">
-                                <h4 class="item-price">
-                                    $300
-                                </h4>
-                                <div>
-                                    <label>
-                                        Comprar un KG
-                                    </label>
-                                    <button class="item-button btn btn-primary addToCart" type="button">
-                                        seleccionar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="alimento-2">
-                    <div class="product">
-                        <div class="item card">
-                            <h3 class="nombre-producto">
-                                <span class="item-title">Excelent gato adulto </span> 15KG
-                            </h3>
-                            <img class="item-image" src="/assets/excelent-gato.png" alt="Bolsa de Excelent gato adulto">
-                            <div class="item-details">
-                                <h4 class="item-price">
-                                    $500
-                                </h4>
-                                <div>
-                                    <label>
-                                        Comprar un KG
-                                    </label>
-                                    <button class="item-button btn btn-primary addToCart" type="button">
-                                        seleccionar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="alimento-3">
-                    <div class="product">
-                        <div class="item card">
-                            <h3 class="nombre-producto"> Bolsa <span class="item-title">Energy Food Perro </span> 20kg</h3>
-                            <img class="item-image" src="/assets/energy-food-adulto-perro.png" alt="Bolsa energy food perro adulto">
-                            <div class="item-details">
-                                <h4 class="item-price">
-                                    $290
-                                </h4>
-                                <div>
-                                    <label>
-                                        Comprar un KG
-                                    </label>
-                                    <button class="item-button btn btn-primary addToCart" type="button">
-                                        seleccionar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="alimento-4">
-                        <div class="product">
-                            <div class="item card">
-                                <h3 class="nombre-producto">
-                                    <span class="item-title"> Sieger Criadores </span> 20kg
-                                </h3>
-                                <img class="item-image" src="/assets/sieger-criadores.png" alt="Sieger Criadores perro">
-                                    <div class="item-details">
-                                        <h4 class="item-price">$300</h4>
-                                            <div>
-                                                <label>
-                                            Comprar un KG
-                                        </label>
-                                        <button class="item-button btn btn-primary addToCart" type="button">
-                                            seleccionar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <input type="radio" name="Switch" id="darkMode"> Modo Oscuro
-            <input type="radio" name="Switch" id="lightMode" checked="checked"> Modo Claro
         </div>
     </div>
-            <!--  Empieza la tabla de items -->
-            <div class="shopping-cart-items shoppingCartItemsContainer  table table-dark">
-            </div>
-            <!--  Fin tabla de items -->
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="shopping-cart-total d-flex align-items-center">
-                        <p class="mb-0">Total a pagar : </p>
-                        <p class="ml-4 mb-0 shoppingCartTotal">  0$</p>
-                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
-                            data-delay="2000">
-                            <div class="toast-header">
-                                <span>✅</span>
-                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
-                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="toast-body text-white">
-                                Se aumentó correctamente la cantidad
-                            </div>
+    <div class="lista-alimento">
+        <div class="alimento-1">
+            <div class="product">
+                <div class="item card">
+                    <h3 class="nombre-producto">
+                        Bolsa <span class="item-title">sabrositos gato </span> 15KG
+                    </h3>
+                    <img class="item-image" src="/assets/sabrositos-gato-adulto.png" alt="Bolsa sabrositos gato adulto">
+                    <div class="item-details">
+                        <h4 class="item-price">
+                            $300
+                        </h4>
+                        <div>
+                            <label>
+                                Comprar un KG
+                            </label>
+                            <button class="item-button btn btn-primary addToCart" type="button">
+                                seleccionar
+                            </button>
                         </div>
-                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
-                            data-target="#comprarModal">Comprar</button>
                     </div>
                 </div>
             </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        </div>
+        <div class="alimento-2">
+            <div class="product">
+                <div class="item card">
+                    <h3 class="nombre-producto">
+                        <span class="item-title">Excelent gato adulto </span> 15KG
+                    </h3>
+                    <img class="item-image" src="/assets/excelent-gato.png" alt="Bolsa de Excelent gato adulto">
+                    <div class="item-details">
+                        <h4 class="item-price">
+                            $500
+                        </h4>
+                        <div>
+                            <label>
+                                Comprar un KG
+                            </label>
+                            <button class="item-button btn btn-primary addToCart" type="button">
+                                seleccionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alimento-3">
+            <div class="product">
+                <div class="item card">
+                    <h3 class="nombre-producto"> Bolsa <span class="item-title">Energy Food Perro </span> 20kg</h3>
+                    <img class="item-image" src="/assets/energy-food-adulto-perro.png"
+                        alt="Bolsa energy food perro adulto">
+                    <div class="item-details">
+                        <h4 class="item-price">
+                            $290
+                        </h4>
+                        <div>
+                            <label>
+                                Comprar un KG
+                            </label>
+                            <button class="item-button btn btn-primary addToCart" type="button">
+                                seleccionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alimento-4">
+            <div class="product">
+                <div class="item card">
+                    <h3 class="nombre-producto">
+                        <span class="item-title"> Sieger Criadores </span> 20kg
+                    </h3>
+                    <img class="item-image" src="/assets/sieger-criadores.png" alt="Sieger Criadores perro">
+                    <div class="item-details">
+                        <h4 class="item-price">$300</h4>
+                        <div>
+                            <label>
+                                Comprar un KG
+                            </label>
+                            <button class="item-button btn btn-primary addToCart" type="button">
+                                seleccionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="radio" name="Switch" id="darkMode"> Modo Oscuro
+    <input type="radio" name="Switch" id="lightMode" checked="checked"> Modo Claro
+    </div>
+    </div>
+    <!--  Empieza la tabla de items -->
+    <div class="shopping-cart-items shoppingCartItemsContainer  table table-dark">
+    </div>
+    <!--  Fin tabla de items -->
+
+    <div class="row">
+        <div class="col-12">
+            <div class="shopping-cart-total d-flex align-items-center">
+                <p class="mb-0">Total a pagar : </p>
+                <p class="ml-4 mb-0 shoppingCartTotal"> 0$</p>
+                <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                    data-delay="2000">
+                    <div class="toast-header">
+                        <span>✅</span>
+                        <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body text-white">
+                        Se aumentó correctamente la cantidad
+                    </div>
+                </div>
+                <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                    data-target="#comprarModal">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -172,8 +160,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-        <script src="index.js">
-        </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="index.js">
+    </script>
 </body>
+
 </html>

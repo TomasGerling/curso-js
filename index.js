@@ -219,3 +219,24 @@ function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
 }
+let registro = document.getElementById("registerButton");
+registro.addEventListener("click", function () {
+  console.log("Estamos intentando leer tus datos");
+  console.log(  
+    document.querySelector("#name").value,
+    document.querySelector("#lastname").value,
+    document.querySelector("#email").value,
+    document.querySelector("#password").value,);
+    let userToObject = {
+      name: document.querySelector("#name").value,
+      lastname: document.querySelector("#lastname").value,
+      email: document.querySelector("#email").value,
+      password: document.querySelector("#password").value,
+};
+
+saveOnLocalStorage(userToObject)
+})
+
+let saveOnLocalStorage = function(userToObject){
+  localStorage.setItem("userInfo", JSON.stringify(userToObject));
+}
