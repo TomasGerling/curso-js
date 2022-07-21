@@ -217,6 +217,13 @@ function quantityChanged(event) {
 
 function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Gracias por su compra, sera redirigido a una pagina para que ingrese sus datos',
+    showConfirmButton: false,
+    timer: 15000
+  })
   updateShoppingCartTotal();
 }
 let registro = document.getElementById("registerButton");
@@ -227,6 +234,11 @@ registro.addEventListener("click", function () {
     document.querySelector("#lastname").value,
     document.querySelector("#email").value,
     document.querySelector("#password").value,
+    Swal.fire({
+      icon: 'success',
+      title: 'Gracias por registrarse en Peluditos',
+      text: 'Confirme su cuenta a traves de su email'
+    })
     );
     let userToObject = {
       name: document.querySelector("#name").value,
