@@ -54,38 +54,6 @@ let lista_alimentos = [
     imagen_bolsa: "/img/Sabrositos_adulto_gato.jpg",
   },
 ];
-// Para agregar un nuevo producto al array
-// for( let i = 0; i < 1 ; i++){
-//     let product_id = parseInt(prompt("Ingrese el id del producto"));
-//     let nombre_alimento = prompt("Ingrese el nombre del producto");
-//     let cantidad_producto = parseInt(prompt("Ingrese cuantas bolsas tiene disponible *En numeros*"));
-//     let peso_por_bolsa = parseFloat(prompt("Ingrese cuanto pesa cada bolsa *Solo el numero*"));
-//     let tipo_mascota = prompt("Ingrese el tipo de mascota *Perro, Gato u Otro*");
-//     let precio_bolsa = parseInt(prompt("Ingrese el precio de venta por Bolsa *Solo el numero*"));
-//     let precio_kg = parseInt(prompt("Ingrese el precio de venta por KG*Solo el numero*"));
-//     let imagen_bolsa = prompt("Ingrese el url de la imagen de la bolsa");
-//     let alimento_nuevo = new Alimentos(product_id, nombre_alimento , cantidad_producto , peso_por_bolsa, tipo_mascota, precio_bolsa, precio_kg, imagen_bolsa);
-
-//     lista_alimentos.push(alimento_nuevo);
-// }
-
-// Metodos de busqueda y transformacion
-// let barato = lista_alimentos.filter(
-//   (nombre_alimento) => nombre_alimento.precio_bolsa <= 5000
-// );
-// console.log(barato);
-
-// let lista_productos = lista_alimentos.map(product_id => product_id.nombre_alimento)
-// console.log(lista_productos);
-
-// let buscar_producto = lista_alimentos.find ((el) => el.nombre_alimento === "Sabrositos Gato Adulto Mix")
-// console.log(buscar_producto);
-
-// let examinar_producto = lista_alimentos.some ((el) => el.nombre_alimento === "Sabrositos Perro Adulto Mix")
-// console.log(examinar_producto);
-
-// let filtrar_por_tipo = lista_alimentos.filter ((el) => el.tipo_mascota.includes ("Gato"))
-// console.log(filtrar_por_tipo);
 
 let darkMode = document.getElementById("darkMode");
 let lightMode = document.getElementById("lightMode");
@@ -264,4 +232,35 @@ let readLocalStorage = function(){
   document.querySelector("#email").value = userInfo.email;
   document.querySelector("#password").value = userInfo.password;
 }
+readLocalStorage()
 //La idea es que si pones readLocalStorage() deberia poner los datos que hay guardados en localStorage pero no me estaria funcionando (devuelve undefined, supongo que es un error a la hora de convertir los datos), estoy averiguando porque
+
+let weatherContainer = document.getElementById("weatherContainer")
+
+fetch("https://api.openweathermap.org/data/2.5/weather?lat=-38.5545&lon=-58.73961&lang=en&units=metric&appid=eba5864c76bd7d0c9eea62ce04647b65")
+    .then (response => response.json())
+    .then (data =>{
+      console.log("La temperatura minima es:" , data.main.temp_min);
+      console.log("La temperatura maxima es:" , data);
+      console.log("La sensación termica es:" , data.main.feels_like);
+      console.log("El clima es: " , data.weather[0].description);
+      weatherContainer.innerHTML = `<ul class="weatherCity">
+                          <li>
+                          Clima en ${data.name}
+                            <ul>
+                              <li class="table-danger" style="color: Black ;">
+                              La temperatura maxima es ${data.main.temp_max} °C
+                              </li>
+                              <li class="table-info" style="color: Black ;">
+                              La temperatura minima es ${data.main.temp_min} °C
+                              </li>
+                              <li class="table-dark">
+                              La sensacion termica es ${data.main.feels_like} °C
+                              </li>
+                              <li class="table-dark" >
+                              <span class="material-icons"> ${data.weather[0].description} </span>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>`;
+    });
