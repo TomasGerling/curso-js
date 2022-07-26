@@ -245,9 +245,9 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=-38.5545&lon=-58.7396
       console.log("La sensación termica es:" , data.main.feels_like);
       console.log("El clima es: " , data.weather[0].description);
       weatherContainer.innerHTML = `<ul class="weatherCity">
-                          <li>
+                          <li class="table-success">
                           Clima en ${data.name}
-                            <ul>
+                            <ul class="datosTemp">
                               <li class="table-danger" style="color: Black ;">
                               La temperatura maxima es ${data.main.temp_max} °C
                               </li>
