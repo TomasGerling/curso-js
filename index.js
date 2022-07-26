@@ -241,7 +241,7 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=-38.5545&lon=-58.7396
     .then (response => response.json())
     .then (data =>{
       console.log("La temperatura minima es:" , data.main.temp_min);
-      console.log("La temperatura maxima es:" , data);
+      console.log("La temperatura maxima es:" , data.main.temp_max);
       console.log("La sensación termica es:" , data.main.feels_like);
       console.log("El clima es: " , data.weather[0].description);
       weatherContainer.innerHTML = `<ul class="weatherCity">
