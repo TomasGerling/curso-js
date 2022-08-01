@@ -99,7 +99,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     if (elementsTitle[i].innerText.trim() === itemTitle.trim()) {
       let elementQuantity = elementsTitle[i]
       let inputElement = elementQuantity.parentNode.parentNode.parentNode.childNodes[5].childNodes[1].childNodes[1];
-      console.log(elementQuantity.parentNode.parentNode.parentNode.childNodes[5].childNodes[1].childNodes[1]);
+      $('.toast').toast('show');
       inputElement.value++;
       updateShoppingCartTotal();
       return;
