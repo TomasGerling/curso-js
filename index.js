@@ -1,16 +1,16 @@
-// class Alimentos{
-//     constructor(product_id, nombre_alimento, cantidad_producto, peso_por_bolsa, tipo_mascota, precio_bolsa, precio_kg, imagen_bolsa){
+class Alimentos{
+    constructor(product_id, nombre_alimento, cantidad_producto, peso_por_bolsa, tipo_mascota, precio_bolsa, precio_kg, imagen_bolsa){
 
-//         this.product_id = product_id;
-//         this.nombre_alimento = nombre_alimento;
-//         this.cantidad_producto = cantidad_producto;
-//         this.peso_por_bolsa = peso_por_bolsa;
-//         this.tipo_mascota = tipo_mascota
-//         this.precio_bolsa = precio_bolsa
-//         this.precio_kg = precio_kg
-//         this.imagen_bolsa = imagen_bolsa
-//     }
-// }
+        this.product_id = product_id;
+        this.nombre_alimento = nombre_alimento;
+        this.cantidad_producto = cantidad_producto;
+        this.peso_por_bolsa = peso_por_bolsa;
+        this.tipo_mascota = tipo_mascota
+        this.precio_bolsa = precio_bolsa
+        this.precio_kg = precio_kg
+        this.imagen_bolsa = imagen_bolsa
+    }
+}
 
 let lista_alimentos = [
   {
@@ -92,22 +92,20 @@ function addToCartClicked(event) {
 
   addItemToShoppingCart(itemTitle, itemPrice, itemImage);
 }
-// Aca esta mi problema
 function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
-  const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
-    'shoppingCartItemTitle'
-  );
+  const elementsTitle = shoppingCartItemsContainer.getElementsByClassName('shoppingCartItemTitle');
+  console.log(elementsTitle);
   for (let i = 0; i < elementsTitle.length; i++) {
-    if (elementsTitle[i].innerText === itemTitle) {
-      let elementQuantity = elementsTitle[
-        i
-      ].parentElement.querySelector(
-        '.shoppingCartItemQuantity'
-      );
-      elementQuantity.value++;
-      $('.toast').toast('show');
+    if (elementsTitle[i].innerText.trim() === itemTitle.trim()) {
+      let elementQuantity = elementsTitle[i]
+      let inputElement = elementQuantity.parentNode.parentNode.parentNode.childNodes[5].childNodes[1].childNodes[1];
+      console.log(elementQuantity.parentNode.parentNode.parentNode.childNodes[5].childNodes[1].childNodes[1]);
+      inputElement.value++;
       updateShoppingCartTotal();
       return;
+    }
+    else{
+
     }
   }
   const shoppingCartRow = document.createElement('div');
@@ -196,7 +194,6 @@ function comprarButtonClicked() {
 }
 let registro = document.getElementById("registerButton");
 registro.addEventListener("click", function () {
-  console.log("Estamos intentando leer tus datos");
   console.log(  
     document.querySelector("#name").value,
     document.querySelector("#lastname").value,
@@ -224,16 +221,14 @@ let saveOnLocalStorage = function(userToObject){
 
 let readLocalStorage = function(){
   let userInfo = localStorage.getItem("userInfo")
-  console.log(userInfo);
   let JSONToObject = JSON.parse(userInfo)
-  console.log(JSONToObject);
-  document.querySelector("#name").value = userInfo.name;
+  document.querySelector("#name").value = JSONToObject[2];
   document.querySelector("#lastname").value = userInfo.lastname;
   document.querySelector("#email").value = userInfo.email;
   document.querySelector("#password").value = userInfo.password;
+  console.log(JSONToObject , "test");
+  
 }
-readLocalStorage()
-//La idea es que si pones readLocalStorage() deberia poner los datos que hay guardados en localStorage pero no me estaria funcionando (devuelve undefined, supongo que es un error a la hora de convertir los datos), estoy averiguando porque
 
 let weatherContainer = document.getElementById("weatherContainer")
 
@@ -241,7 +236,7 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=-38.5545&lon=-58.7396
     .then (response => response.json())
     .then (data =>{
       console.log("La temperatura minima es:" , data.main.temp_min);
-      console.log("La temperatura maxima es:" , data.main.temp_max);
+      console.log("La temperatura maxima es:" , data);
       console.log("La sensación termica es:" , data.main.feels_like);
       console.log("El clima es: " , data.weather[0].description);
       weatherContainer.innerHTML = `<ul class="weatherCity">
@@ -258,7 +253,7 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=-38.5545&lon=-58.7396
                               La sensacion termica es ${data.main.feels_like} °C
                               </li>
                               <li class="table-dark" >
-                              <span class="material-icons"> ${data.weather[0].description} </span>
+                              <span class="material-icons"> ${data.weather[0].description}</span>
                               </li>
                             </ul>
                           </li>
